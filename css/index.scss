@@ -1,0 +1,303 @@
+@charset 'utf-8';
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+    position: relative;
+    display: block;
+
+    div#output {
+        //test
+        position: fixed;
+        z-index: 9999;
+        background-color: white;
+    }
+
+    div.gray-wrap {
+        // width: 100%;
+        // height: 100vh;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        transition: 0.5s;
+        position: fixed;
+    }
+    div.intro {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        // background-position: center top;
+        z-index: 10;
+    }
+    div#aqbg {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 5;
+        background-color: #202020;
+        img.hpb-aq {
+            position: absolute;
+            width: 80%;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+        img.aqalph {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            width: 50%;
+        }
+    }
+    div.canvas {
+        display: block;
+        position: fixed;
+        overflow: hidden;
+        text-align: center;
+        z-index: 30;
+        img.character {
+            min-width: 100%;
+            min-height: 100vh;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        img.name {
+            position: fixed;
+            width: 100%;
+            max-width: 95vw;
+            left: 2rem;
+        }
+    }
+    div#anime0 {
+        z-index: 9999;
+        background-color: rgb(0, 0, 0);
+        img.aqours-logo {
+            margin-top: 2rem;
+            position: relative;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+        div.scrolle-bar{
+            position: absolute;
+            color: #fff;
+            text-align: center;
+            font-size: 3rem;
+            font-family: serif;
+            transform: translate(-50%, -50%);
+            transform: rotateZ(-90deg);
+            top: 50%;
+            left: 50%;
+            &::after{
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                height: 10px;
+                width: 200%;
+                left: -1.85rem;
+                top: 0rem;
+                animation: sc 2s linear 0s forwards infinite;
+                @keyframes sc {
+                    from{
+                        width: 200%;
+                    }to{
+                        width: 0;
+                    }
+                }
+            }
+        }
+        p.start-btn {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.5;
+            position: absolute;
+            display: inline-block;
+            padding: 1rem 4rem;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            color: #212529;
+            border-radius: 0.5rem;
+            font-size: 1.8rem;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            color: #fff;
+            border-radius: 100vh;
+            background-image: -webkit-gradient(linear, left top, right top, from(#007adf), to(#00ecbc));
+            background-image: -webkit-linear-gradient(left, #007adf 0%, #00ecbc 100%);
+            background-image: linear-gradient(to right, #007adf 0%, #00ecbc 100%);
+            -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            &:hover {
+                font-size: 1.9rem;
+                color: #fff;
+            }
+        }
+        p.attention {
+            font-size: 1rem;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            font-weight: normal;
+        }
+    }
+    div#scene2 {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        background-image: url(../img/image603-1920x1200.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0;
+        z-index: 100;
+        div.bg-wrap {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+        }
+        img.aq-ship {
+            position: fixed;
+            width: auto;
+            max-width: 95vw;
+            bottom: 0;
+        }
+        div.text {
+            p {
+                font-size: 4rem;
+                position: fixed;
+                font-weight: bold;
+                color: #0080ff;
+                text-shadow: 2px 2px 5px #fff;
+                top: 2rem;
+                left: 2rem;
+            }
+        }
+        // background-color: rgb(255, 180, 217);
+        // background-image: url(../img/member/riko/pc/riko_1_pc.jpg);
+    }
+
+    div#main-page {
+        display: none;
+        opacity: 0;
+        width: 100%;
+        transition: 1s;
+        overflow: visible;
+        z-index: 1000;
+        overflow: hidden;
+        position: fixed;
+        header#main-header {
+            width: 100%;
+            height: 100vh;
+            nav.pc-menu {
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                z-index: 999;
+                top: 0;
+                transition: 0.5s;
+                background-color: #f78ae3;
+            }
+            div.header-image-box {
+                width: auto;
+                max-width: 100%;
+                height: 100vh;
+                background-image: url(../img/background_new.png);
+                background-size: cover;
+                background-position: bottom;
+                img.header-aqours {
+                    max-height: 100vh; //縦サイズより大きくなることの防止(画面外に行くのを防ぐ)
+                    width: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    vertical-align: bottom;
+                }
+                img.aniv_logo {
+                    //5周年ロゴ
+                    position: absolute;
+                    width: 30%;
+                    max-width: 30rem;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    top: 2rem;
+                    animation: logo-appeal 4s ease 0s infinite;
+                }
+                @keyframes logo-appeal {
+                    0% {
+                        width: 30rem;
+                    }
+                    50% {
+                        width: calc(30rem - 1%);
+                    }
+                    100% {
+                        width: 30rem;
+                    }
+                }
+                img.happy5th {
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                    max-width: 1000px;
+                    transform: translateX(-50%);
+                    left: 50%;
+                }
+                div.btn-box{
+                    position: absolute;
+                    width: 10rem;
+                    height: 10rem;
+                    bottom: 1rem;
+                    left: 1rem;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 9999;
+                    text-align: center;
+                    a.btn-circle-fishy {
+                        margin: 0 auto;
+                        position: relative;
+                        bottom: 0;
+                        display: block;
+                        text-decoration: none;
+                        color: #fff;
+                        width: 120px;
+                        height: 120px;
+                        line-height: 120px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+                        transition: 0.4s;
+                        &:hover {
+                            -webkit-transform: rotate(10deg);
+                            transform: rotate(10deg);
+                        }
+                    }
+                    a.twitter-share-button{
+                        position: absolute;
+                        bottom: 10rem;
+                        width: 200px;
+                        z-index: 9999;
+                    }
+                }
+            }
+        }
+    }
+}
